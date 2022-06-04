@@ -1,0 +1,11 @@
+
+.items{
+    margin: 0 5px;
+    padding: 0 5px;
+    border: solid 2px;
+    border-radius: 5px;
+    border-color: gray;
+}
+img{
+    width: 100px;    
+}

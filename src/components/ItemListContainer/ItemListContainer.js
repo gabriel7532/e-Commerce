@@ -1,8 +1,27 @@
 import './ItemListContainer.css'
+import { useState,useEffect } from 'react'
+import { getItems } from '../ItemList/ItemList'
+import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = (props)=>{
-        return(
-            <h3 className="Titulo" >{props.greeting}</h3>
+        const [items, setItems] = useState([])
+
+
+    useEffect(() => {
+            getItems().then(response =>{
+                setItems(response)
+            })
+        }, [])
+
+    
+    
+    return(
+            <>
+            <div>
+                <h3 className="Titulo" >{props.greeting}</h3>
+                <ItemList items= {items}/>
+            </div>
+            </>
         )
 }
 
