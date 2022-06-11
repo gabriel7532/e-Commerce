@@ -1,6 +1,3 @@
-import { getItems } from "../../AsyncMock"
-import Item from "../Item/Item"
-
 const ItemDetail = ({id, name, img, descripcion}) => {
     
     
