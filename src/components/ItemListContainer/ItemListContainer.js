@@ -1,6 +1,6 @@
 import './ItemListContainer.css'
 import { useState,useEffect } from 'react'
-import { getItems } from '../ItemList/ItemList'
+import { getItems, getItemsByCategory } from '../../AsyncMock'
 import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = (props)=>{
@@ -19,7 +19,8 @@ const ItemListContainer = (props)=>{
             <>
             <div>
                 <h3 className="Titulo" >{props.greeting}</h3>
-                <ItemList items= {items}/>
+                <ItemList items= {items}/>   
+                             
             </div>
             </>
         )
