@@ -1,0 +1,26 @@
+
+
+.titulo{
+    color: black;
+    display: flex;
+    align-items: flex-start;
+    text-decoration: none;
+}
+
+.navbar{
+    background-color: rgb(131, 230, 220);
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    text-decoration: none;
+    
+}
+.botones-navbar{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.Option{
+    text-decoration: none;
+    margin: 0 1rem;
+}
