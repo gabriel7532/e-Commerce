@@ -1,0 +1,12 @@
+.detalle{
+    border-style: solid;
+    width: 11rem;
+    display: inline-block;
+    border-radius: 5px;
+    
+}
+
+.descripcion{
+    background-color: rgb(131, 230, 220);
+    font-weight: 700;
+}

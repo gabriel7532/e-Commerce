@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# E-COMMERCE SPORT-SHOP
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Descripción del proyecto
+El proyecto se trata de un e-commerce
+de articulos deportivos, en el cual puedes encontrar diversas ofertas y variedad de productos para tu necesidad. 
 
 ## Available Scripts
 

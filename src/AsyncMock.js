@@ -19,7 +19,7 @@ const items = [
     },
     {
         id: '3',
-        name: 'Lazo para saltar',
+        name: 'Lazo',
         img: 'https://falabella.scene7.com/is/image/FalabellaCO/4954312_1?wid=800&hei=800&qlt=70',
         category: 'cardio',
         precio: '$50.000',

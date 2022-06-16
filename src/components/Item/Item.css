@@ -1,11 +1,30 @@
 
 .items{
+    width: 9rem;
+    height: 18rem;
     margin: 0 5px;
-    padding: 0 5px;
+    padding: 0 1rem;
     border: solid 2px;
     border-radius: 5px;
     border-color: gray;
+
+}
+
+.name{
+    background-color: rgb(131, 230, 220);;
 }
 img{
     width: 100px;    
+}
+
+.verDetalle{
+    border-style: double;
+    padding: 2px;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    font-size: small;
+    background-color: gainsboro;
+    cursor: pointer;
+    outline: inherit;
 }
