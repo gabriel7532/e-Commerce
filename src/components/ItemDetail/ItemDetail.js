@@ -1,59 +1,23 @@
 import "./ItemDetail.css"
 import { useState } from "react"
 import { useContext } from "react"
-import { Context } from "../../App"
-
-const InputCount = ({onAdd, stock, initial=1})=>{
-    const [count, setCount] = useState(initial)
-
-    const handleChange = (e)=>{
-        setCount(e.target.value)
-    }
-    return(
-        <div> 
-            <input type='number' onChange ={handleChange} value={count}/>
-            <button onClick={() => onAdd(parseInt(count))}>Agregar al carrito</button>
-        </div> 
-    )
-}
-
-const ButtonCount = ({onAdd, stock=10, initial = 1}) =>{
-    const [count, setCount] = useState(initial)
-
-    const increment=() =>{
-        if(count < stock) setCount(count + 1)
-    }
-
-    const decrement=() =>{
-        if(count > 0) setCount(count - 1)
-    }
-
-    return(
-        <div>
-            <p>{count}</p>
-                <button onClick = {decrement}>-</button>
-                <button onClick = {increment}>+</button>
-                <button onClick = {() => onAdd(count)}>Agregar al carrito</button>
-        </div>
-    )
-}
+import ItemCount from "../ItemCount/ItemCount"
+import CartContext from "../context/CartContext"
+import { Link } from "react-router-dom"
 
 const ItemDetail = ({id, name, img, descripcion, precio, precioOferta,stock}) => {
-      const {cart, setCart} = useContext(Context)
 
-    const [inputType, setInputType] = useState('button')
+    const [quantityAdded, setQuantityAdded] = useState(0)
 
-    const changeCount = () => {
-        const input = inputType === 'button' ? 'input' : 'button'
-        setInputType(input)
-    }
+      const {addItem} = useContext(CartContext)
+
 
     const handleOnAdd = (quantity) => {
         console.log(`se agregaron ${quantity} ${name}`)
-        setCart([...cart, {id, name, precio, quantity}])
+        addItem({id, name, precio, quantity})
+        setQuantityAdded(quantity)
     }
 
-        const Count = inputType === 'button' ? ButtonCount : InputCount
     
 
         return(
@@ -64,8 +28,9 @@ const ItemDetail = ({id, name, img, descripcion, precio, precioOferta,stock}) =>
             <h4>Ahora = {precioOferta}</h4>
             <p className="descripcion" >{descripcion}</p>
 
-            <button onClick={changeCount}>Cambiar contador</button>
-            <Count onAdd={handleOnAdd} stock={stock}/>
+            {quantityAdded === 0
+            ? <ItemCount onAdd={handleOnAdd} stock={stock}/> :<Link to='/cart'>Terminar compra</Link>
+            }
 
         </div>
     )
